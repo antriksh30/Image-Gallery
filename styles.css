@@ -9,12 +9,14 @@
 }
 
 .wrapper{
+    height: auto;
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
 }
 
 .gallery {
+    height: 100%;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 25px;
@@ -75,9 +77,22 @@
     transition: 0.3s;
 }
 
+@media (min-width:768px) {
+    #image9, #image5, #image12{
+        grid-column: span 2;
+    }
+}
+
+
+
 @media (max-width:768px) and (min-width:500px){
     .gallery{
         grid-template-columns: repeat(2,1fr);
+        justify-content: baseline;
+        align-content: baseline;
+    }
+    #image5, #image12{
+        grid-column: span 2;
     }
 }
 
